@@ -22,6 +22,30 @@ const services: [string, string, LucideIcon][] = [
   ['الاستشارات التسويقية', 'رؤية استراتيجية واضحة تساعدك على اتخاذ القرار.', BrainCircuit],
   ['تحليل البيانات والأداء', 'قرارات أوضح عبر قراءة عميقة لما تقوله الأرقام.', BarChart3],
 ]
+const serviceDetails = [
+  [
+    ['تصميم الشعارات والهويات البصرية (Logo & Branding)', 'الخطوة الأولى للنجاح تبدأ من هويتك البصرية. نصمم لك شعارات فريدة ومبتكرة تعكس قيم مشروعك وتترك انطباعاً راسخاً في أذهان عملائك. شعارك ليس مجرد رسمة، بل هو قصة نجاحك المكتوبة بصرياً.'],
+    ['تصميم البرشورات والمطبوعات الإعلانية (Brochures & Graphic Design)', 'انقل رسالتك البيعية بأسلوب منظم وأنيق! نقدم خدمات تصميم برشورات، ومطويات، وكافة المطبوعات الإعلانية بهوية متناسقة وألوان مريحة للعين، تجمع بين الإبداع الفني والوضوح التسويقي لتبهر كل من يراها.'],
+  ],
+  [['إنتاج الفيديوهات الإعلانية والموشن جرافيك (Video Production)', 'الصورة بألف كلمة، والفيديو بآلاف المبيعات! ننتج لك فيديوهات إعلانية ومقاطع موشن جرافيك احترافية تخطف الأنظار من الثواني الأولى. ندمج بين الصوت، الصورة، والرسالة التسويقية القوية لتحريك مشاعر جمهورك نحو الشراء.']],
+  [['تصميم الصور والمحتوى المرئي الرقمي وعمل صفحات في شبكات التواصل وإدارتها (Social Media Graphics)', 'اجعل حساباتك تنبض بالحياة! نصمم صوراً وبوسترات إعلانية رقمية جذابة ومخصصة لمنصات التواصل الاجتماعي، تساهم في إبراز منتجاتك وخدماتك بأفضل مظهر احترافي يشجع على التفاعل والمشاركة.']],
+  [
+    ['إدارة الحملات الإعلانية (Campaign Management)', 'لا تترك نجاح مشروعك للصدفة! في شركة ناجح، نخطط ونقود حملاتك الإعلانية من الألف إلى الياء بذكاء واحترافية. نضمن لك الوصول إلى جمهورك المستهدف بدقة، وضمان أعلى عائد على الاستثمار (ROI) لتبدو كل منصة وكأنها تعمل لصالح نمو مبيعاتك.'],
+    ['الإعلانات الممولة عبر شبكات التواصل الاجتماعي (Social Media Ads)', 'تخطّ الحدود الجغرافية واجعل علامتك التجارية في صدارة منصات التواصل! نتميز بإنشاء وإدارة إعلانات ممولة ومبتكرة على (فيسبوك، إنستغرام، سناب شات، تيك توك، ومنصة X) تضمن لك التفاعل الحقيقي وتحويل المشاهدات العابرة إلى عملاء دائمين.'],
+  ],
+  [['تحسين محركات البحث (SEO - Search Engine Optimization)', 'اجعل موقعك الخيار الأول لمن يبحث عن خدماتك! نعمل على تهيئة وتحديث موقعك الإلكتروني ليتصدر نتائج البحث الأولى على Google بشكل طبيعي ومستدام. نزيد من وصول جمهورك المستهدف إليك دون الحاجة إلى تكاليف إعلانية مستمرة.']],
+  [['تصميم وإدارة المواقع الإلكترونية (Web Development & Management)', 'مقرك الرقمي هو واجهة نجاحك أمام العالم! نصمم ونطور مواقع إلكترونية حديثة، سريعة، ومتجاوبة مع جميع الشاشات والهواتف. كما نتولى إدارتها وتحديثها باستمرار لتضمن لزوارك تجربة تصفح سلسة وآمنة تحول الزيارات إلى مبيعات قائمة.']],
+  [['ابتكار أفكار جديدة لتطوير الأعمال التجارية (Business Innovation)', 'هل تبحث عن التميز والخروج عن المألوف؟ نحن لا نتبع الصيحات بل نصنعها! نبتكر لك أفكاراً ريادية واستراتيجيات تسويقية حديثة تفتح لأعمالك التجارية آفاقاً جديدة وأسواقاً واعدة، وتضمن لك البقاء دائماً في الصدارة.']],
+  [['إعداد دراسات لتطوير المشاريع (Project Development Studies)', 'النمو المستدام يحتاج إلى خارطة طريق واضحة. نقدم لك دراسات تحليلية واستشارية متكاملة لتطوير المشاريع القائمة، نحدد من خلالها نقاط القوة والفرص المتاحة في السوق لتتخطى منافسيك بثقة وتوسع أعمالك بخطى ثابتة.']],
+]
+const serviceItems = services.map(([name, shortDescription, icon], index) => ({
+  id: index + 1,
+  name,
+  image: `/images/service${index + 1}.png`,
+  icon,
+  shortDescription,
+  details: serviceDetails[index],
+}))
 const portfolio = [
   ['هوية بصرية', 'أثر', 'هوية فاخرة لعلامة عطور محلية', '/images/hero-01.png'], ['تسويق رقمي', 'مدار', 'استراتيجية نمو لمنصة تقنية', '/images/hero-02.png'],
   ['مواقع', 'واجهة', 'تجربة رقمية لعلامة تجارية طموحة', '/images/hero-03.png'], ['محتوى', 'نبض', 'نظام محتوى بصري متكامل', '/images/hero-04.png'],
@@ -94,6 +118,7 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false)
   const [filter, setFilter] = useState('الكل')
   const [sent, setSent] = useState(false)
+  const [openService, setOpenService] = useState<number | null>(null)
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 30); onScroll(); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll) }, [])
   useEffect(() => { document.body.classList.toggle('menu-open', menu); return () => document.body.classList.remove('menu-open') }, [menu])
   useEffect(() => {
@@ -120,7 +145,17 @@ export default function App() {
     <main>
       <section id="home" className="hero-section"><div className="hero-grid"/><div className="hero-glow glow-blue"/><div className="hero-glow glow-gold"/><div className="hero-inner"><div className="hero-copy"><div className="hero-kicker"><Sparkles size={15}/> شريكك في النمو الرقمي</div><h1>نصنع حضورًا رقميًا<br/><span>يصنع نتائج حقيقية</span></h1><p>ناجح لخدمات التسويق الإلكتروني — نبني استراتيجيات رقمية متكاملة تساعد علامتك التجارية على النمو والوصول إلى جمهورها وتحقيق نتائج قابلة للقياس.</p><div className="hero-actions"><a className="button button-gold" href="#contact">ابدأ مشروعك <ArrowLeft size={17}/></a><a className="button button-outline" href="#services">اكتشف خدماتنا</a></div><div className="hero-proof"><span className="proof-icon"><Check size={14}/></span> شريكك من الفكرة إلى النتيجة</div></div><HeroSlider/></div><div className="hero-bottom"><span>01 <i/> استراتيجية</span><span>02 <i/> إبداع</span><span>03 <i/> نمو مستدام</span></div></section>
       <section id="about" className="about-section section-pad"><div className="about-geometry"><span/><span/><span/></div><div className="about-inner"><div><SectionTitle eyebrow="من نحن" title={<>نحوّل الأفكار إلى حضور<br className="mobile-title-break"/> رقمي مؤثر</>} text="ناجح لخدمات التسويق الإلكتروني شريك نمو للعلامات التجارية الطموحة. نجمع بين الاستراتيجية والإبداع والتحليل لنصنع تجارب رقمية متكاملة، ونحوّل أهدافك إلى خطوات واضحة ونتائج قابلة للقياس."/><a className="text-link" href="#contact">تعرّف على خدماتنا <ArrowLeft size={16}/></a></div><div className="about-cards">{[['01','رؤيتنا','أن نكون الشريك الرقمي الموثوق للعلامات الطموحة.'],['02','رسالتنا','ابتكار حلول تسويقية تصنع نموًا حقيقيًا ومستدامًا.'],['03','قيمنا','الشغف والوضوح والإتقان والالتزام بالنتائج.']].map(([n, title, text], index) => <article className={`about-card${index === 1 ? ' featured' : ''}`} key={n}><b>{n}</b><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
-      <section id="services" className="services-section section-pad"><div className="container"><SectionTitle eyebrow="خدماتنا" title="كل ما تحتاجه علامتك لتنمو بثقة" text="حلول رقمية متكاملة تُصمم حول أهدافك وترافق علامتك في كل مرحلة من مراحل النمو." center/><div className="services-grid">{services.map(([title, text, Icon], index) => <article className="service-card" key={title}><span className="service-index">0{index + 1}</span><span className="service-icon"><Icon size={23}/></span><h3>{title}</h3><p>{text}</p><a href="#contact" aria-label={`اطلب خدمة ${title}`}><ArrowLeft size={17}/></a></article>)}</div></div></section>
+      <section id="services" className="services-section section-pad"><div className="container"><SectionTitle eyebrow="خدماتنا" title="كل ما تحتاجه علامتك لتنمو بثقة" text="حلول رقمية متكاملة تُصمم حول أهدافك وترافق علامتك في كل مرحلة من مراحل النمو." center/><div className="services-grid">{serviceItems.map(({ id, name, image, icon: Icon, shortDescription, details }) => {
+        const isOpen = openService === id
+        const detailsId = `service-details-${id}`
+        return <article className={`service-card${isOpen ? ' is-open' : ''}`} key={id}>
+          <button className="service-toggle" type="button" aria-expanded={isOpen} aria-controls={detailsId} onClick={() => setOpenService(isOpen ? null : id)}>
+            <span className="service-image-wrap"><img src={image} alt={name} loading="lazy" onError={(event) => { event.currentTarget.style.visibility = 'hidden' }}/></span>
+            <span className="service-card-content"><span className="service-index">0{id}</span><span className="service-icon"><Icon size={23}/></span><span className="service-name">{name}</span><span className="service-short-description">{shortDescription}</span><span className="service-more">{isOpen ? 'إخفاء التفاصيل' : 'مزيد من التفاصيل'} <ArrowLeft size={15} aria-hidden="true"/></span></span>
+          </button>
+          <div className="service-details" id={detailsId} aria-hidden={!isOpen}><div className="service-details-inner"><h4>تفاصيل الخدمة</h4>{details.map(([heading, description]) => <div className="service-detail-item" key={heading}><h5>{heading}</h5><p>{description}</p></div>)}</div></div>
+        </article>
+      })}</div></div></section>
       <section id="why-us" className="why-section section-pad"><div className="container why-layout"><div><SectionTitle eyebrow="لماذا ناجح؟" title="شريك يرى الصورة كاملة" text="نبدأ بفهم ما يميزك، ثم نبني مسارًا تسويقيًا واضحًا يجمع الأدوات المناسبة ويقيس أثر كل خطوة."/><div className="why-stats"><Counter value={100} label="مشروع منجز"/><Counter value={50} label="عميل وثق بنا"/><Counter value={5} label="سنوات من الخبرة"/></div></div><div className="why-list">{whyItems.map(([title, Icon], index) => <article key={title}><span className="why-icon"><Icon size={20}/></span><div><h3>{title}</h3><p>{['خطط مبنية على أهداف عملك وجمهورك.', 'أفكار متجددة تعبّر عن شخصية علامتك.', 'فريق متخصص يفهم تحديات التسويق الرقمي.', 'مؤشرات واضحة تربط الجهد بأثره.', 'خدمات تعمل معًا ضمن رؤية واحدة.', 'نتابع معك ونساند خطواتك نحو النمو.'][index]}</p></div></article>)}</div></div></section>
       <section id="portfolio" className="portfolio-section section-pad"><div className="container"><div className="portfolio-heading"><SectionTitle eyebrow="أعمالنا" title="قصص رقمية نصنعها معًا" text="نماذج تصورية توضح كيف يلتقي الإبداع بالاستراتيجية لصناعة حضور مميز."/><div className="portfolio-filters" role="group" aria-label="تصفية الأعمال">{categories.map((category) => <button key={category} onClick={() => setFilter(category)} className={filter === category ? 'active' : ''} aria-pressed={filter === category}>{category}</button>)}</div></div><div className="portfolio-grid">{works.map(([category, name, description, image]) => <article className="portfolio-card" key={name}><img src={image} alt={`تصور مشروع ${name} — ${category}`} loading="lazy"/><div className="portfolio-overlay"><span>{category}</span><h3>{name}</h3><p>{description}</p></div><span className="portfolio-open" aria-hidden="true"><ArrowLeft size={18}/></span></article>)}</div></div></section>
       <section id="process" className="process-section section-pad"><div className="container"><SectionTitle eyebrow="آلية العمل" title="خطوات واضحة نحو نتائج أكبر" text="رحلة تعاون منظمة تضع أهدافك في المقدمة من أول لقاء إلى التطوير المستمر." center/><div className="process-grid">{process.map(([number, title, text]) => <article key={number}><span>{number}</span><i/><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
